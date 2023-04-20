@@ -1,5 +1,7 @@
 import './globals.css';
 import { Nunito } from 'next/font/google';
+import Sidebar from './components/sidebar/Sidebar';
+import Navbar from './components/navbar/Navbar';
 
 const nunito = Nunito({ subsets: ['latin'] });
 
@@ -15,7 +17,13 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en' className={nunito.className}>
-			<body>{children}</body>
+			<body className='flex bg-indigo-100/30'>
+				<Sidebar />
+				<div className='w-full'>
+					<Navbar />
+					{children}
+				</div>
+			</body>
 		</html>
 	);
 }

@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.sidebar-nav div {
+		@apply w-full px-3;
+	}
+
+	.sidebar-nav div h3 {
+		@apply mb-2 pl-3 text-sm font-semibold text-slate-400;
+	}
+
+	.sidebar-nav div li {
+		@apply mb-2 flex cursor-pointer items-center space-x-3 rounded-md py-2 pl-3 transition duration-150 ease-in-out hover:bg-indigo-100/40;
+	}
+
+	.sidebar-nav div li .icon {
+		@apply h-5 w-5;
+	}
+
+	.sidebar-nav div li .icon-fill {
+		@apply fill-slate-400;
+	}
+
+	.sidebar-nav div li:hover .icon-fill {
+		@apply fill-indigo-500;
+	}
+
+	.sidebar-nav div li .icon-stroke {
+		@apply stroke-slate-400;
+	}
+
+	.sidebar-nav div li:hover .icon-stroke {
+		@apply stroke-indigo-500;
+	}
+
+	.sidebar-nav div li span {
+		@apply text-sm font-medium text-slate-700;
+	}
+
+	.sidebar-nav div li:hover span {
+		@apply text-indigo-500;
+	}
+}
