@@ -10,14 +10,17 @@ import {
 import { HiOutlineUsers } from 'react-icons/hi';
 import { TbReport, TbNotification, TbLayoutDashboard } from 'react-icons/tb';
 import { FiSettings } from 'react-icons/fi';
+import Image from 'next/image';
+import Logo from '../../assets/images/admin.png';
 
 const Sidebar = () => {
 	return (
 		<div className='z-10 min-h-screen w-1/6 min-w-max bg-white'>
-			<div className='flex h-20 items-center justify-center'>
-				<span className='text-xl font-bold text-indigo-500'>Ad.min</span>
+			<div className='flex h-20 items-center justify-center space-x-1'>
+				<Image src={Logo} alt='logo' width={20} height={20} />
+				<span className='text-xl font-bold text-indigo-500'>Admin.ly</span>
 			</div>
-			<div className='h-full shadow-xl shadow-slate-300/40'>
+			<div className='h-full bg-white shadow-xl shadow-slate-300/40'>
 				<div>
 					<ul className='sidebar-nav flex flex-col items-center justify-center space-y-5'>
 						<div>

@@ -1,4 +1,3 @@
-import { MdLanguage } from 'react-icons/md';
 import {
 	BsChatLeftDots,
 	BsFullscreenExit,
@@ -9,7 +8,7 @@ import { SlBell } from 'react-icons/sl';
 
 const Navbar = () => {
 	return (
-		<div className='flex h-20 w-full items-center justify-center bg-white px-10 shadow-md shadow-indigo-200/40'>
+		<div className='flex h-20 w-full items-center justify-center bg-white px-10 shadow-sm shadow-indigo-200/30'>
 			<input
 				className='w-2/3 rounded-lg border p-3 text-slate-700 outline-none transition duration-300 ease-in-out focus:border-2 focus:border-indigo-600'
 				type='search'
