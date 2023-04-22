@@ -112,8 +112,8 @@ const List = () => {
 									<span
 										className={`rounded-full px-2.5 py-1.5 ${
 											row.status === 'Approved'
-												? 'bg-green-400/30 text-green-600'
-												: 'bg-yellow-400/30 text-yellow-600'
+												? 'bg-green-300/30 text-green-700'
+												: 'bg-yellow-300/30 text-yellow-700'
 										}`}
 									>
 										{row.status}
