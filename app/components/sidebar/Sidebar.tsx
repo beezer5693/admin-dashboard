@@ -15,12 +15,12 @@ import Logo from '../../assets/images/admin.png';
 
 const Sidebar = () => {
 	return (
-		<div className='z-10 min-h-screen w-1/6 min-w-max bg-white'>
-			<div className='flex h-20 items-center justify-center space-x-1'>
-				<Image src={Logo} alt='logo' width={20} height={20} />
-				<span className='text-xl font-bold text-indigo-500'>Admin.ly</span>
+		<div className='fixed bottom-0 left-0 top-0 z-20 min-h-screen w-60 bg-white'>
+			<div className='flex w-full items-center space-x-1 px-5 pb-10 pt-5'>
+				<Image src={Logo} alt='logo' width={30} height={30} />
+				<span className='text-xl font-bold text-black'>Admin.ly</span>
 			</div>
-			<div className='h-full bg-white shadow-xl shadow-slate-300/40'>
+			<div className='h-full bg-white shadow-xl shadow-gray-300/40'>
 				<div>
 					<ul className='sidebar-nav flex flex-col items-center justify-center space-y-5'>
 						<div>

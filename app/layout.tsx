@@ -1,9 +1,12 @@
 import './globals.css';
-import { Nunito } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import Sidebar from './components/sidebar/Sidebar';
 import Navbar from './components/navbar/Navbar';
 
-const nunito = Nunito({ subsets: ['latin'] });
+const roboto = Roboto({
+	subsets: ['latin'],
+	weight: ['100', '300', '400', '500', '700', '900']
+});
 
 export const metadata = {
 	title: 'Admin App',
@@ -16,12 +19,13 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en' className={nunito.className}>
-			<body className='flex bg-indigo-100/30'>
+		<html lang='en' className={roboto.className}>
+			<body className='flex min-h-screen bg-gray-200/40 pl-60'>
 				<Sidebar />
+				<Navbar />
 				<div className='w-full'>
-					<Navbar />
 					{children}
+					<div className='h-20'></div>
 				</div>
 			</body>
 		</html>

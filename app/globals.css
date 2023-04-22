@@ -3,16 +3,20 @@
 @tailwind utilities;
 
 @layer components {
+	* {
+		@apply box-border;
+	}
+
 	.sidebar-nav div {
 		@apply w-full px-3;
 	}
 
 	.sidebar-nav div h3 {
-		@apply mb-2 pl-3 text-sm font-semibold text-slate-400;
+		@apply mb-2 pl-3 text-sm font-medium text-gray-400;
 	}
 
 	.sidebar-nav div li {
-		@apply mb-2 flex cursor-pointer items-center space-x-3 rounded-md py-2 pl-3 transition duration-150 ease-in-out hover:bg-indigo-100/40;
+		@apply mb-1 flex cursor-pointer items-center space-x-3 rounded-full py-3 pl-3 transition duration-300 ease-in-out hover:bg-black;
 	}
 
 	.sidebar-nav div li .icon {
@@ -20,26 +24,26 @@
 	}
 
 	.sidebar-nav div li .icon-fill {
-		@apply fill-slate-400;
+		@apply fill-gray-600;
 	}
 
 	.sidebar-nav div li:hover .icon-fill {
-		@apply fill-indigo-500;
+		@apply fill-white transition duration-300 ease-in-out;
 	}
 
 	.sidebar-nav div li .icon-stroke {
-		@apply stroke-slate-400;
+		@apply stroke-gray-600;
 	}
 
 	.sidebar-nav div li:hover .icon-stroke {
-		@apply stroke-indigo-500;
+		@apply stroke-white transition duration-300 ease-in-out;
 	}
 
 	.sidebar-nav div li span {
-		@apply text-sm font-medium text-slate-700;
+		@apply text-sm font-normal text-gray-700;
 	}
 
 	.sidebar-nav div li:hover span {
-		@apply text-indigo-500;
+		@apply text-white transition duration-300 ease-in-out;
 	}
 }

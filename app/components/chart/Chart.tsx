@@ -4,7 +4,6 @@ import {
 	AreaChart,
 	Area,
 	XAxis,
-	YAxis,
 	CartesianGrid,
 	Tooltip,
 	ResponsiveContainer
@@ -21,10 +20,10 @@ const data = [
 
 const Chart = () => {
 	return (
-		<div className='col-span-3 flex flex-col justify-between rounded-lg bg-white px-3 pb-6 pt-3 shadow-2xl shadow-indigo-400/20'>
-			<span className='text-xl text-slate-400'>Last 6 Months (Revenue)</span>
-			<div className='flex items-center justify-center px-2'>
-				<ResponsiveContainer width='100%' aspect={2 / 1}>
+		<div className='col-span-3 flex flex-col justify-between rounded-lg bg-black px-6 py-4 shadow-2xl shadow-gray-800/50'>
+			<span className='text-xl text-gray-200'>Last 6 Months (Revenue)</span>
+			<div className='flex items-center justify-center'>
+				<ResponsiveContainer width='100%' height='100%' aspect={2 / 1}>
 					<AreaChart
 						width={730}
 						height={250}
@@ -33,16 +32,22 @@ const Chart = () => {
 					>
 						<defs>
 							<linearGradient id='total' x1='0' y1='0' x2='0' y2='1'>
-								<stop offset='5%' stopColor='#4f46e5' stopOpacity={0.8} />
-								<stop offset='95%' stopColor='#4f46e5' stopOpacity={0} />
+								<stop offset='5%' stopColor='#0ea5e9' stopOpacity={0.6} />
+								<stop offset='80%' stopColor='#0ea5e9' stopOpacity={0} />
 							</linearGradient>
 						</defs>
-						<XAxis dataKey='name' stroke='#94a3b8' />
-						<Tooltip />
+						<XAxis dataKey='name' stroke='#e5e7eb' />
+						<Tooltip
+							wrapperStyle={{
+								outline: 'none',
+								fontSize: '14px',
+								fontWeight: 300
+							}}
+						/>
 						<Area
 							type='monotone'
 							dataKey='Total'
-							stroke='#4f46e5'
+							stroke='#06b6d4'
 							fillOpacity={1}
 							fill='url(#total)'
 						/>

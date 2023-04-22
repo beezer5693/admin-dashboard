@@ -69,9 +69,9 @@ const Widget = ({ type }: TypeProps) => {
 			break;
 	}
 	return (
-		<div className='display flex justify-between rounded-lg bg-white p-3 shadow-xl shadow-indigo-200/40'>
+		<div className='display flex justify-between rounded-lg bg-white p-3 shadow-xl shadow-gray-300/30'>
 			<div className='flex flex-col justify-between space-y-3'>
-				<span className='font-bold text-slate-400'>{data?.title}</span>
+				<span className='font-normal text-gray-400'>{data?.title}</span>
 				<span className='text-2xl font-light'>
 					{data?.isMoney && '$'} {amount}{' '}
 				</span>
