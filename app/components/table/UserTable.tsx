@@ -20,7 +20,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 	}
 }));
 
-const List = () => {
+const UserTransactions = () => {
 	const rows = [
 		{
 			id: 1143155,
@@ -74,7 +74,7 @@ const List = () => {
 		}
 	];
 	return (
-		<div className='mx-h-screen rounded-lg bg-white px-6 pb-4 pt-2 shadow-2xl shadow-gray-600/20'>
+		<div className='mx-h-screen rounded-lg bg-white px-6 pb-4 pt-2 shadow-2xl shadow-gray-400/20'>
 			<div className='flex items-center py-3'>Latest Transactions</div>
 			<TableContainer component={Paper} sx={{ boxShadow: 'none' }}>
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
@@ -127,4 +127,4 @@ const List = () => {
 		</div>
 	);
 };
-export default List;
+export default UserTransactions;

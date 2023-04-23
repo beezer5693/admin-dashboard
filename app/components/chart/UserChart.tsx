@@ -11,12 +11,14 @@ const data = [
 	{ name: 'June', Total: 1700 }
 ];
 
-const Chart = () => {
+const UserChart = () => {
 	return (
-		<div className='col-span-3 flex flex-col justify-between rounded-lg bg-black px-6 py-4 shadow-2xl shadow-gray-800/50'>
-			<span className='text-xl text-gray-200'>'Last 6 Month (Revenue)'</span>
+		<>
+			<span className='text-xl text-gray-500'>
+				User Transactions (Last 6 Months)
+			</span>
 			<div className='flex items-center justify-center'>
-				<ResponsiveContainer width='100%' height='100%' aspect={2 / 1}>
+				<ResponsiveContainer width='100%' height='100%' aspect={3 / 1}>
 					<AreaChart
 						width={730}
 						height={250}
@@ -29,7 +31,7 @@ const Chart = () => {
 								<stop offset='80%' stopColor='#0ea5e9' stopOpacity={0} />
 							</linearGradient>
 						</defs>
-						<XAxis dataKey='name' stroke='#e5e7eb' />
+						<XAxis dataKey='name' stroke='#6b7280' />
 						<Tooltip
 							wrapperStyle={{
 								outline: 'none',
@@ -47,7 +49,7 @@ const Chart = () => {
 					</AreaChart>
 				</ResponsiveContainer>
 			</div>
-		</div>
+		</>
 	);
 };
-export default Chart;
+export default UserChart;
