@@ -14,7 +14,7 @@ const data = [
 const UserChart = () => {
 	return (
 		<>
-			<span className='text-xl text-gray-500'>
+			<span className='text-xl text-gray-800'>
 				User Transactions (Last 6 Months)
 			</span>
 			<div className='flex items-center justify-center'>
@@ -27,11 +27,11 @@ const UserChart = () => {
 					>
 						<defs>
 							<linearGradient id='total' x1='0' y1='0' x2='0' y2='1'>
-								<stop offset='5%' stopColor='#0ea5e9' stopOpacity={0.6} />
-								<stop offset='80%' stopColor='#0ea5e9' stopOpacity={0} />
+								<stop offset='5%' stopColor='#2563eb' stopOpacity={0.6} />
+								<stop offset='80%' stopColor='#2563eb' stopOpacity={0} />
 							</linearGradient>
 						</defs>
-						<XAxis dataKey='name' stroke='#6b7280' />
+						<XAxis dataKey='name' stroke='#1f2937' />
 						<Tooltip
 							wrapperStyle={{
 								outline: 'none',
@@ -42,7 +42,7 @@ const UserChart = () => {
 						<Area
 							type='monotone'
 							dataKey='Total'
-							stroke='#06b6d4'
+							stroke='#2563eb'
 							fillOpacity={1}
 							fill='url(#total)'
 						/>

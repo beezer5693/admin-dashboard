@@ -5,7 +5,7 @@ import Table from './components/table/Table';
 
 export default function Home() {
 	return (
-		<div className='mt-20 px-20'>
+		<div className='mt-20 px-10'>
 			<div className='grid grid-cols-4 gap-4 pt-8'>
 				<Widget type='user' />
 				<Widget type='order' />

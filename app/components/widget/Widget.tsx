@@ -23,8 +23,8 @@ const Widget = ({ type }: TypeProps) => {
 				isMoney: false,
 				link: 'See all users',
 				icon: (
-					<div className='rounded-md bg-red-400/30 p-1'>
-						<MdPersonOutline className='h-5 w-5 fill-red-600' />
+					<div className='rounded-md bg-blue-300/30 p-1'>
+						<MdPersonOutline className='h-5 w-5 fill-blue-600' />
 					</div>
 				)
 			};
@@ -35,8 +35,8 @@ const Widget = ({ type }: TypeProps) => {
 				isMoney: false,
 				link: 'See all orders',
 				icon: (
-					<div className='rounded-md bg-yellow-400/30 p-1'>
-						<BsCart2 className='h-5 w-5 fill-yellow-600' />
+					<div className='rounded-md bg-blue-300/30 p-1'>
+						<BsCart2 className='h-5 w-5 fill-blue-600' />
 					</div>
 				)
 			};
@@ -47,8 +47,8 @@ const Widget = ({ type }: TypeProps) => {
 				isMoney: true,
 				link: 'View earnings',
 				icon: (
-					<div className='rounded-md bg-green-400/30 p-1'>
-						<MdOutlineAttachMoney className='h-5 w-5 fill-green-600' />
+					<div className='rounded-md bg-blue-300/30 p-1'>
+						<MdOutlineAttachMoney className='h-5 w-5 fill-blue-600' />
 					</div>
 				)
 			};
@@ -59,8 +59,8 @@ const Widget = ({ type }: TypeProps) => {
 				isMoney: true,
 				link: 'View balance',
 				icon: (
-					<div className='rounded-md bg-purple-400/30 p-1'>
-						<BsWallet2 className='h-5 w-5 fill-purple-600' />
+					<div className='rounded-md bg-blue-300/30 p-1'>
+						<BsWallet2 className='h-5 w-5 fill-blue-600' />
 					</div>
 				)
 			};
@@ -69,9 +69,9 @@ const Widget = ({ type }: TypeProps) => {
 			break;
 	}
 	return (
-		<div className='display flex justify-between rounded-lg bg-white p-3 shadow-xl shadow-gray-300/30'>
+		<div className='display flex justify-between rounded-lg bg-white p-3'>
 			<div className='flex flex-col justify-between space-y-3'>
-				<span className='font-normal text-gray-400'>{data?.title}</span>
+				<span className='font-normal text-gray-500'>{data?.title}</span>
 				<span className='text-2xl font-light'>
 					{data?.isMoney && '$'} {amount}{' '}
 				</span>

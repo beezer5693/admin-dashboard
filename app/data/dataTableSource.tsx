@@ -25,12 +25,12 @@ export const columns: GridColDef[] = [
 		width: 230,
 		renderCell: params => (
 			<div
-				className={`rounded-full px-2.5 py-1 ${
+				className={`rounded-lg px-2.5 py-1 ${
 					params.row.status === 'active'
-						? 'bg-green-300/30 text-green-700'
+						? 'bg-green-400/20 text-green-700'
 						: params.row.status === 'pending'
-						? 'bg-yellow-300/30 text-yellow-700'
-						: 'bg-red-300/30 text-red-700'
+						? 'bg-yellow-400/20 text-yellow-600'
+						: 'bg-red-400/20 text-red-700'
 				}`}
 			>
 				{params.row.status}

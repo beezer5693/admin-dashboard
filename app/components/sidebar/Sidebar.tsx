@@ -16,14 +16,14 @@ import Logo from '../../assets/images/admin.png';
 
 const Sidebar = () => {
 	return (
-		<div className='fixed bottom-0 left-0 top-0 z-20 min-h-screen w-60 bg-white'>
-			<Link href='/'>
-				<div className='flex w-full items-center space-x-1 px-5 pb-10 pt-5'>
-					<Image src={Logo} alt='logo' width={30} height={30} />
-					<span className='text-xl font-bold text-black'>Admin.ly</span>
-				</div>
-			</Link>
-			<div className='h-full bg-white shadow-xl shadow-gray-300/40'>
+		<div className='fixed bottom-0 left-0 top-0 z-20 flex min-h-screen w-72 flex-col justify-between overflow-auto bg-black'>
+			<div>
+				<Link href='/'>
+					<div className='mb-10 mt-5 flex w-full items-center space-x-3 px-5'>
+						<Image src={Logo} alt='logo' width={30} height={30} />
+						<span className='text-xl font-bold text-gray-100'>Admin.ly</span>
+					</div>
+				</Link>
 				<div>
 					<ul className='sidebar-nav flex flex-col items-center justify-center space-y-5'>
 						<div>
@@ -87,15 +87,33 @@ const Sidebar = () => {
 								<TbNotification className='icon icon-stroke' />
 								<span>Notifications</span>
 							</li>
-							<li>
-								<MdLogout className='icon icon-fill' />
-								<span>Logout</span>
-							</li>
 						</div>
 					</ul>
 				</div>
 			</div>
-			<div></div>
+			<div className='mb-20 mt-10 flex w-full flex-col items-center'>
+				<div className='mb-6 flex items-center gap-4'>
+					<img
+						className='h-10 w-10 rounded-full object-cover'
+						src='https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=798&q=80'
+						alt=''
+					/>
+					<div className='flex flex-col'>
+						<span className='font-light text-gray-100'>Brandon Bryan</span>
+						<span className='text-sm font-light text-gray-500'>
+							Software Developer
+						</span>
+					</div>
+				</div>
+				<div className='w-full px-4'>
+					<div className='group mb-1 flex cursor-pointer items-center space-x-3 rounded-xl bg-gray-400/20 py-4 pl-4 transition duration-300 ease-in-out'>
+						<MdLogout className='icon icon-fill group-hover:fill-gray-300' />
+						<span className='text-sm font-normal text-gray-500 group-hover:text-gray-300'>
+							Logout
+						</span>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

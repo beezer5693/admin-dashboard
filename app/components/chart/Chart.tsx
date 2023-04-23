@@ -13,8 +13,8 @@ const data = [
 
 const Chart = () => {
 	return (
-		<div className='col-span-3 flex flex-col justify-between rounded-lg bg-black px-6 py-4 shadow-2xl shadow-gray-800/50'>
-			<span className='text-xl text-gray-200'>Last 6 Month (Revenue)</span>
+		<div className='col-span-3 flex flex-col justify-between rounded-lg bg-white px-6 py-4'>
+			<span className='text-xl text-gray-800'>Last 6 Month (Revenue)</span>
 			<div className='flex items-center justify-center'>
 				<ResponsiveContainer width='100%' height='100%' aspect={2 / 1}>
 					<AreaChart
@@ -25,11 +25,11 @@ const Chart = () => {
 					>
 						<defs>
 							<linearGradient id='total' x1='0' y1='0' x2='0' y2='1'>
-								<stop offset='5%' stopColor='#0ea5e9' stopOpacity={0.6} />
-								<stop offset='80%' stopColor='#0ea5e9' stopOpacity={0} />
+								<stop offset='5%' stopColor='#2563eb' stopOpacity={0.8} />
+								<stop offset='95%' stopColor='#2563eb' stopOpacity={0} />
 							</linearGradient>
 						</defs>
-						<XAxis dataKey='name' stroke='#e5e7eb' />
+						<XAxis dataKey='name' stroke='#1f2937' />
 						<Tooltip
 							wrapperStyle={{
 								outline: 'none',
@@ -38,8 +38,9 @@ const Chart = () => {
 							}}
 						/>
 						<Area
+							type='monotone'
 							dataKey='Total'
-							stroke='#06b6d4'
+							stroke='#2563eb'
 							fillOpacity={1}
 							fill='url(#total)'
 						/>

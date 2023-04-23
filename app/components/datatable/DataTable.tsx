@@ -1,6 +1,7 @@
 'use client';
 
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import Link from 'next/link';
+import { DataGrid } from '@mui/x-data-grid';
 import { columns, rows } from '@/app/data/dataTableSource';
 
 const DataTable = () => {
@@ -11,11 +12,13 @@ const DataTable = () => {
 			width: 230,
 			renderCell: () => (
 				<div className='flex items-center gap-3'>
-					<div className='cursor-pointer rounded-lg p-1.5 text-gray-600/40 hover:bg-gray-300/30 hover:text-black'>
-						View
-					</div>
-					<div className='cursor-pointer rounded-lg p-1.5 text-gray-500/40 hover:text-gray-400'>
-						Delete
+					<Link href='/users/1'>
+						<div className='cursor-pointer rounded-lg p-1.5 text-gray-600/40 hover:bg-gray-300/30 hover:text-black'>
+							View
+						</div>
+					</Link>
+					<div className='cursor-pointer rounded-lg p-1.5 text-gray-500/40 hover:text-gray-600'>
+						Remove
 					</div>
 				</div>
 			)
@@ -23,8 +26,15 @@ const DataTable = () => {
 	];
 
 	return (
-		<div className='mt-40 rounded-lg bg-white px-3 py-3 shadow-2xl shadow-gray-500/20'>
-			<span>Users</span>
+		<div className='mt-40 rounded-lg bg-white p-5'>
+			<div className='mb-5 flex w-full items-center justify-between'>
+				<span className='text-2xl text-gray-800'>Users</span>
+				<Link href='/users/register'>
+					<span className='cursor-pointer rounded-lg px-2 py-1.5 text-gray-500/60 transition hover:bg-gray-200/40 hover:text-black'>
+						Add User
+					</span>
+				</Link>
+			</div>
 			<DataGrid
 				style={{ border: 'none' }}
 				rows={rows}
@@ -32,7 +42,7 @@ const DataTable = () => {
 				initialState={{
 					pagination: {
 						paginationModel: {
-							pageSize: 5
+							pageSize: 10
 						}
 					}
 				}}

@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en' className={roboto.className}>
-			<body className='flex min-h-screen bg-gray-200/40 pl-60'>
+			<body className='flex min-h-screen bg-gray-200/40 pl-72'>
 				<Sidebar />
 				<Navbar />
 				<div className='w-full'>

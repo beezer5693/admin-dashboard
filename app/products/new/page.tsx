@@ -1,7 +1,7 @@
 const NewProduct = () => {
 	return (
 		<div className='mt-40 flex flex-col items-center px-20'>
-			<div className='flex w-1/2 flex-col rounded-lg bg-white p-8 shadow-2xl shadow-gray-400/40'>
+			<div className='flex w-1/2 flex-col rounded-lg bg-white p-8'>
 				<h1 className='text-xl text-black'>Add a New Product</h1>
 				<div className='mt-8 flex flex-col justify-center'>
 					<form>
@@ -46,7 +46,7 @@ const NewProduct = () => {
 						</div>
 						<button
 							type='submit'
-							className='w-full rounded-lg bg-black p-2.5 text-gray-100 transition duration-300 ease-in-out hover:opacity-80'
+							className='w-full rounded-lg bg-blue-600 p-2.5 text-gray-100 transition duration-300 ease-in-out hover:bg-blue-600/80'
 						>
 							Submit
 						</button>

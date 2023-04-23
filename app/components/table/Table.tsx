@@ -74,7 +74,7 @@ const List = () => {
 		}
 	];
 	return (
-		<div className='mx-h-screen rounded-lg bg-white px-6 pb-4 pt-2 shadow-2xl shadow-gray-600/20'>
+		<div className='mx-h-screen rounded-lg bg-white px-6 pb-4 pt-2'>
 			<div className='flex items-center py-3'>Latest Transactions</div>
 			<TableContainer component={Paper} sx={{ boxShadow: 'none' }}>
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
@@ -112,8 +112,8 @@ const List = () => {
 									<span
 										className={`rounded-lg px-2.5 py-1.5 ${
 											row.status === 'Approved'
-												? 'bg-green-300/30 text-green-700'
-												: 'bg-yellow-300/30 text-yellow-700'
+												? 'bg-green-400/20 text-green-700'
+												: 'bg-yellow-400/20 text-yellow-600'
 										}`}
 									>
 										{row.status}

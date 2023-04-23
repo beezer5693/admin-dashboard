@@ -74,7 +74,7 @@ const UserTransactions = () => {
 		}
 	];
 	return (
-		<div className='mx-h-screen rounded-lg bg-white px-6 pb-4 pt-2 shadow-2xl shadow-gray-400/20'>
+		<div className='mx-h-screen rounded-lg bg-white px-6 pb-4 pt-2'>
 			<div className='flex items-center py-3'>Latest Transactions</div>
 			<TableContainer component={Paper} sx={{ boxShadow: 'none' }}>
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>

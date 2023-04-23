@@ -1,10 +1,7 @@
 'use client';
 
 import { useState, ChangeEvent } from 'react';
-import {
-	MdOutlineAddPhotoAlternate,
-	MdOutlineDriveFolderUpload
-} from 'react-icons/md';
+import { BsFillImageFill } from 'react-icons/bs';
 
 const Register = () => {
 	const [file, setFile] = useState<File | null>(null);
@@ -16,26 +13,33 @@ const Register = () => {
 			setFile(null);
 		}
 	};
+
 	return (
-		<div className='mt-40 flex flex-col items-center px-20'>
-			<div className='flex w-1/2 flex-col rounded-lg bg-white p-8 shadow-2xl shadow-gray-400/40'>
+		<div className='mt-40 flex h-1/2 flex-col items-center px-10'>
+			<div className='flex w-2/3 flex-col rounded-lg bg-white p-8'>
 				<h1 className='text-xl text-black'>Create a New User</h1>
 				<div className='mt-8 flex flex-col justify-center'>
 					<form>
-						<div className='mb-6 flex w-full items-center justify-between gap-3 rounded-lg border-2 border-dashed p-2'>
+						<div className='mb-6 flex items-center justify-between gap-3 rounded-lg border-2 border-dashed p-2'>
 							<div className='flex shrink-0 items-center gap-2'>
-								<img
-									className='mr-3 h-16 w-16 rounded-lg object-cover'
-									src={file ? URL.createObjectURL(file) : undefined}
-									alt='Current profile photo'
-								/>
+								{file ? (
+									<img
+										className='mr-3 h-16 w-16 rounded-lg object-cover'
+										src={URL.createObjectURL(file)}
+										alt='Current profile photo'
+									/>
+								) : (
+									<div className='flex h-16 w-16 items-center justify-center rounded-lg bg-blue-300/30'>
+										<BsFillImageFill className='h-5 w-5 fill-blue-600' />
+									</div>
+								)}
 								<div className='text-sm text-gray-500/80'>
 									Upload a profile picture.
 								</div>
 							</div>
 							<label
 								htmlFor='profile'
-								className='rounded-full border-0 bg-gray-100 px-4 py-2 text-sm text-black transition hover:bg-gray-200/60'
+								className='cursor-pointer rounded-full border-0 bg-gray-100 px-4 py-2 text-sm text-black transition hover:bg-gray-200/60'
 							>
 								Choose image
 							</label>
@@ -132,7 +136,7 @@ const Register = () => {
 						</div>
 						<button
 							type='submit'
-							className='w-full rounded-lg bg-black p-2.5 text-gray-100 transition duration-300 ease-in-out hover:opacity-80'
+							className='w-full rounded-lg bg-blue-600 p-2.5 text-gray-100 transition duration-300 ease-in-out hover:bg-blue-600/80'
 						>
 							Submit
 						</button>
