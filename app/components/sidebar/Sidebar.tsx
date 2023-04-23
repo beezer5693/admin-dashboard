@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {
 	MdPayment,
 	MdOutlineDeliveryDining,
@@ -16,19 +17,23 @@ import Logo from '../../assets/images/admin.png';
 const Sidebar = () => {
 	return (
 		<div className='fixed bottom-0 left-0 top-0 z-20 min-h-screen w-60 bg-white'>
-			<div className='flex w-full items-center space-x-1 px-5 pb-10 pt-5'>
-				<Image src={Logo} alt='logo' width={30} height={30} />
-				<span className='text-xl font-bold text-black'>Admin.ly</span>
-			</div>
+			<Link href='/'>
+				<div className='flex w-full items-center space-x-1 px-5 pb-10 pt-5'>
+					<Image src={Logo} alt='logo' width={30} height={30} />
+					<span className='text-xl font-bold text-black'>Admin.ly</span>
+				</div>
+			</Link>
 			<div className='h-full bg-white shadow-xl shadow-gray-300/40'>
 				<div>
 					<ul className='sidebar-nav flex flex-col items-center justify-center space-y-5'>
 						<div>
 							<h3>Menu</h3>
-							<li>
-								<TbLayoutDashboard className='icon icon-stroke' />
-								<span>Dashboard</span>
-							</li>
+							<Link href='/'>
+								<li>
+									<TbLayoutDashboard className='icon icon-stroke' />
+									<span>Dashboard</span>
+								</li>
+							</Link>
 							<li>
 								<MdOutlineAnalytics className='icon icon-fill' />
 								<span>Stats</span>
@@ -40,14 +45,18 @@ const Sidebar = () => {
 						</div>
 						<div>
 							<h3>Management</h3>
-							<li>
-								<HiOutlineUsers className='icon icon-stroke' />
-								<span>Users</span>
-							</li>
-							<li>
-								<MdStorefront className='icon icon-fill' />
-								<span>Products</span>
-							</li>
+							<Link href='/users'>
+								<li>
+									<HiOutlineUsers className='icon icon-stroke' />
+									<span>Users</span>
+								</li>
+							</Link>
+							<Link href='/products'>
+								<li>
+									<MdStorefront className='icon icon-fill' />
+									<span>Products</span>
+								</li>
+							</Link>
 							<li>
 								<MdOutlineDeliveryDining className='icon icon-fill' />
 								<span>Delivery</span>

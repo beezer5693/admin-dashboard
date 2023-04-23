@@ -14,7 +14,7 @@ const data = [
 const Chart = () => {
 	return (
 		<div className='col-span-3 flex flex-col justify-between rounded-lg bg-black px-6 py-4 shadow-2xl shadow-gray-800/50'>
-			<span className='text-xl text-gray-200'>'Last 6 Month (Revenue)'</span>
+			<span className='text-xl text-gray-200'>Last 6 Month (Revenue)</span>
 			<div className='flex items-center justify-center'>
 				<ResponsiveContainer width='100%' height='100%' aspect={2 / 1}>
 					<AreaChart
@@ -38,7 +38,6 @@ const Chart = () => {
 							}}
 						/>
 						<Area
-							type='monotone'
 							dataKey='Total'
 							stroke='#06b6d4'
 							fillOpacity={1}
