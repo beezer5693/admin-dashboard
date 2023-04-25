@@ -15,8 +15,8 @@ const Register = () => {
 	};
 
 	return (
-		<div className='mt-28 flex flex-col items-center px-10'>
-			<div className='flex w-2/3 flex-col rounded-2xl bg-white p-8 dark:bg-zinc-950'>
+		<div className='mt-28 min-w-[600px] px-10'>
+			<div className='flex flex-col rounded-2xl bg-white p-8 dark:bg-zinc-950'>
 				<h1 className='text-xl text-black dark:text-gray-200'>
 					Create a New User
 				</h1>
