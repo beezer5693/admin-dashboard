@@ -1,25 +1,5 @@
 'use client';
 
-import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-	[`&.${tableCellClasses.head}`]: {
-		backgroundColor: '#000000',
-		color: theme.palette.common.white
-	},
-	[`&.${tableCellClasses.body}`]: {
-		fontSize: 14,
-		border: 'none'
-	}
-}));
-
 const UserTransactions = () => {
 	const rows = [
 		{
@@ -74,56 +54,85 @@ const UserTransactions = () => {
 		}
 	];
 	return (
-		<div className='mx-h-screen rounded-lg bg-white px-6 pb-4 pt-2'>
-			<div className='flex items-center py-3'>Latest Transactions</div>
-			<TableContainer component={Paper} sx={{ boxShadow: 'none' }}>
-				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
-					<TableHead className='bg-black'>
-						<TableRow>
-							<TableCell></TableCell>
-							<TableCell className='text-gray-200'>Tracking ID</TableCell>
-							<TableCell className='text-gray-200'>Product</TableCell>
-							<TableCell className='text-gray-200'>Customer</TableCell>
-							<TableCell className='text-gray-200'>Date</TableCell>
-							<TableCell className='text-gray-200'>Amount</TableCell>
-							<TableCell className='text-gray-200'>Payment Method</TableCell>
-							<TableCell className='text-gray-200'>Status</TableCell>
-						</TableRow>
-					</TableHead>
-					<TableBody>
+		<div className='mx-h-screen rounded-xl bg-white px-6 pb-4 pt-2 dark:bg-zinc-950'>
+			<div className='flex items-center py-3 dark:text-gray-200'>
+				Latest Transactions
+			</div>
+			<div className='overflow-x-auto'>
+				<table className='table w-full'>
+					<thead>
+						<tr>
+							<th className='bg-blue-600 text-gray-200 dark:bg-zinc-900'></th>
+							<th className='bg-blue-600 text-gray-200 dark:bg-zinc-900'>
+								Tracking ID
+							</th>
+							<th className='bg-blue-600 text-gray-200 dark:bg-zinc-900'>
+								Product
+							</th>
+							<th className='bg-blue-600 text-gray-200 dark:bg-zinc-900'>
+								Customer
+							</th>
+							<th className='bg-blue-600 text-gray-200 dark:bg-zinc-900'>
+								Date
+							</th>
+							<th className='bg-blue-600 text-gray-200 dark:bg-zinc-900'>
+								Amount
+							</th>
+							<th className='bg-blue-600 text-gray-200 dark:bg-zinc-900'>
+								Payment Method
+							</th>
+							<th className='bg-blue-600 text-gray-200 dark:bg-zinc-900'>
+								Status
+							</th>
+						</tr>
+					</thead>
+					<tbody>
 						{rows.map((row, i) => (
-							<TableRow
-								key={row.id}
-								sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-							>
-								<StyledTableCell>{i + 1}</StyledTableCell>
-								<StyledTableCell>{row.id}</StyledTableCell>
-								<StyledTableCell>
+							<tr key={row.id}>
+								<th className='border-none bg-blue-200/10 dark:bg-zinc-800 dark:text-gray-200'>
+									{i + 1}
+								</th>
+								<td className='border-none bg-blue-200/10 dark:bg-zinc-800 dark:text-gray-200'>
+									{row.id}
+								</td>
+								<td className='border-none bg-blue-200/10 dark:bg-zinc-800 dark:text-gray-200'>
 									<div className='flex items-center gap-3'>
-										<img src={row.img} alt='' className='h-7 w-7' />
+										<img
+											className='h-8 w-8 object-contain'
+											src={row.img}
+											alt=''
+										/>
 										{row.product}
 									</div>
-								</StyledTableCell>
-								<StyledTableCell>{row.customer}</StyledTableCell>
-								<StyledTableCell>{row.date}</StyledTableCell>
-								<StyledTableCell>{row.amount}</StyledTableCell>
-								<StyledTableCell>{row.method}</StyledTableCell>
-								<StyledTableCell>
+								</td>
+								<td className='border-none bg-blue-200/10 dark:bg-zinc-800 dark:text-gray-200'>
+									{row.customer}
+								</td>
+								<td className='border-none bg-blue-200/10 dark:bg-zinc-800 dark:text-gray-200'>
+									{row.date}
+								</td>
+								<td className='border-none bg-blue-200/10 dark:bg-zinc-800 dark:text-gray-200'>
+									{row.amount}
+								</td>
+								<td className='border-none bg-blue-200/10 dark:bg-zinc-800 dark:text-gray-200'>
+									{row.method}
+								</td>
+								<td className='border-none bg-blue-200/10 dark:bg-zinc-800 dark:text-gray-200'>
 									<span
-										className={`rounded-lg px-2.5 py-1.5 ${
+										className={`rounded-lg px-2 py-1.5 ${
 											row.status === 'Approved'
-												? 'bg-green-300/30 text-green-700'
-												: 'bg-yellow-300/30 text-yellow-700'
+												? 'bg-blue-400/20 text-blue-500'
+												: 'bg-cyan-400/20 text-cyan-500'
 										}`}
 									>
 										{row.status}
 									</span>
-								</StyledTableCell>
-							</TableRow>
+								</td>
+							</tr>
 						))}
-					</TableBody>
-				</Table>
-			</TableContainer>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	);
 };

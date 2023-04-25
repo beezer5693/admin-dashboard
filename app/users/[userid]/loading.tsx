@@ -1,4 +1,3 @@
-import React from 'react';
 import { SVGProps } from 'react';
 
 export default function Loading(props: SVGProps<SVGSVGElement>) {

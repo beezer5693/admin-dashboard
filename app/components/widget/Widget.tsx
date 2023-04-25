@@ -69,19 +69,21 @@ const Widget = ({ type }: TypeProps) => {
 			break;
 	}
 	return (
-		<div className='display flex justify-between rounded-lg bg-white p-3'>
+		<div className='display flex justify-between rounded-xl bg-white p-3 dark:bg-zinc-950'>
 			<div className='flex flex-col justify-between space-y-3'>
-				<span className='font-normal text-gray-500'>{data?.title}</span>
-				<span className='text-2xl font-light'>
+				<span className='font-normal text-gray-500 dark:text-gray-200'>
+					{data?.title}
+				</span>
+				<span className='text-2xl font-light dark:text-gray-200'>
 					{data?.isMoney && '$'} {amount}{' '}
 				</span>
-				<span className='cursor-pointer text-sm hover:underline'>
+				<span className='cursor-pointer text-sm hover:underline dark:text-gray-200'>
 					{data?.link}
 				</span>
 			</div>
 			<div className='flex flex-col items-end justify-between'>
-				<span className='flex items-center'>
-					<MdKeyboardArrowUp />
+				<span className='flex items-center dark:text-gray-200'>
+					<MdKeyboardArrowUp className='dark:fill-gray-200' />
 					{percentage}%
 				</span>
 				{data?.icon}

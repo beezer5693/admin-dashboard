@@ -1,6 +1,7 @@
 'use client';
 
 import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { useTheme } from 'next-themes';
 
 const data = [
 	{ name: 'January', Total: 1200 },
@@ -12,9 +13,12 @@ const data = [
 ];
 
 const UserChart = () => {
+	const { theme } = useTheme();
+	const isDarkMode = theme === 'dark';
+
 	return (
 		<>
-			<span className='text-xl text-gray-800'>
+			<span className='text-xl text-gray-800 dark:text-gray-200'>
 				User Transactions (Last 6 Months)
 			</span>
 			<div className='flex items-center justify-center'>
@@ -31,7 +35,7 @@ const UserChart = () => {
 								<stop offset='80%' stopColor='#2563eb' stopOpacity={0} />
 							</linearGradient>
 						</defs>
-						<XAxis dataKey='name' stroke='#1f2937' />
+						<XAxis dataKey='name' stroke={isDarkMode ? '#fff' : '#1f2937'} />
 						<Tooltip
 							wrapperStyle={{
 								outline: 'none',

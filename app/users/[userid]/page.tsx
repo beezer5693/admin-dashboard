@@ -12,11 +12,11 @@ const User = ({ params: { userid } }: ParamProps) => {
 		<div className='mt-28 px-10'>
 			<div className='flex flex-col gap-10'>
 				<div className='flex gap-4'>
-					<div className='relative flex basis-2/6 flex-col items-center justify-center rounded-lg bg-white pt-4'>
-						<div className='absolute right-3 top-3 cursor-pointer rounded-lg bg-gray-300/30 px-2 py-1 text-sm text-gray-400 hover:text-gray-800'>
+					<div className='relative flex basis-2/6 flex-col items-center justify-center rounded-2xl bg-white pt-4 dark:bg-zinc-950'>
+						<div className='absolute right-3 top-3 cursor-pointer rounded-lg bg-gray-300/30 px-2 py-1 text-sm text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'>
 							Edit
 						</div>
-						<h1 className='absolute left-4 top-4 text-xl text-gray-800'>
+						<h1 className='absolute left-4 top-4 text-xl text-gray-800 dark:text-gray-200'>
 							Profile
 						</h1>
 						<div className='flex gap-6'>
@@ -26,29 +26,39 @@ const User = ({ params: { userid } }: ParamProps) => {
 								alt=''
 							/>
 							<div>
-								<h1 className='mb-3 text-2xl'>Brandon Bryan</h1>
+								<h1 className='mb-3 text-2xl dark:text-gray-200'>
+									Brandon Bryan
+								</h1>
 								<div className='flex flex-col gap-3'>
 									<div className='flex items-center space-x-3'>
-										<span className='text-gray-500'>Email:</span>
-										<span className='text-sm font-light text-gray-500'>
+										<span className='text-gray-500 dark:text-gray-400'>
+											Email:
+										</span>
+										<span className='text-sm font-light text-gray-500 dark:text-gray-400'>
 											janedoe@gmail.com
 										</span>
 									</div>
 									<div className='flex items-center space-x-3'>
-										<span className='text-gray-500'>Phone:</span>
-										<span className='text-sm font-light text-gray-500'>
+										<span className='text-gray-500 dark:text-gray-400'>
+											Phone:
+										</span>
+										<span className='text-sm font-light text-gray-500 dark:text-gray-400'>
 											555-555-5555
 										</span>
 									</div>
 									<div className='flex space-x-3'>
-										<span className='text-gray-500'>Address:</span>
-										<span className='mt-0.5 text-sm font-light text-gray-500'>
+										<span className='text-gray-500 dark:text-gray-400'>
+											Address:
+										</span>
+										<span className='mt-0.5 text-sm font-light text-gray-500 dark:text-gray-400'>
 											11720 NW 9Th St <br /> Plantation, FL <br /> 33325
 										</span>
 									</div>
 									<div className='flex items-center space-x-3'>
-										<span className='text-gray-500'>Country:</span>
-										<span className='text-sm font-light text-gray-500'>
+										<span className='text-gray-500 dark:text-gray-400'>
+											Country:
+										</span>
+										<span className='text-sm font-light text-gray-500 dark:text-gray-400'>
 											USA
 										</span>
 									</div>
@@ -56,7 +66,7 @@ const User = ({ params: { userid } }: ParamProps) => {
 							</div>
 						</div>
 					</div>
-					<div className='grow rounded-lg bg-white px-4 py-4'>
+					<div className='grow rounded-2xl bg-white px-4 py-4 dark:bg-zinc-950'>
 						<UserChart />
 					</div>
 				</div>

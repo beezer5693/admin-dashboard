@@ -15,12 +15,14 @@ const Register = () => {
 	};
 
 	return (
-		<div className='mt-40 flex h-1/2 flex-col items-center px-10'>
-			<div className='flex w-2/3 flex-col rounded-lg bg-white p-8'>
-				<h1 className='text-xl text-black'>Create a New User</h1>
+		<div className='mt-28 flex h-1/2 flex-col items-center px-10'>
+			<div className='flex w-2/3 flex-col rounded-2xl bg-white p-8 dark:bg-zinc-950'>
+				<h1 className='text-xl text-black dark:text-gray-200'>
+					Create a New User
+				</h1>
 				<div className='mt-8 flex flex-col justify-center'>
 					<form>
-						<div className='mb-6 flex items-center justify-between gap-3 rounded-lg border-2 border-dashed p-2'>
+						<div className='mb-6 flex items-center justify-between gap-3 rounded-lg border-2 border-dashed p-2 dark:border-gray-500'>
 							<div className='flex shrink-0 items-center gap-2'>
 								{file ? (
 									<img
@@ -33,13 +35,13 @@ const Register = () => {
 										<BsFillImageFill className='h-5 w-5 fill-blue-600' />
 									</div>
 								)}
-								<div className='text-sm text-gray-500/80'>
+								<div className='text-sm text-gray-500/80 dark:text-gray-400'>
 									Upload a profile picture.
 								</div>
 							</div>
 							<label
 								htmlFor='profile'
-								className='cursor-pointer rounded-full border-0 bg-gray-100 px-4 py-2 text-sm text-black transition hover:bg-gray-200/60'
+								className='cursor-pointer rounded-full border-0 bg-gray-100 px-4 py-2 text-sm text-black transition hover:bg-gray-200/60 dark:bg-zinc-800 dark:text-gray-400 dark:hover:text-gray-300'
 							>
 								Choose image
 							</label>
@@ -52,83 +54,103 @@ const Register = () => {
 						</div>
 						<div className='flex gap-2'>
 							<div className='mb-3 flex w-1/2 flex-col'>
-								<label className='text-sm text-gray-500/80'>First name</label>
+								<label className='text-sm text-gray-500/80 dark:text-gray-400'>
+									First name
+								</label>
 								<input
-									className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-500'
+									className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-600 dark:border-zinc-950 dark:bg-gray-300/20 dark:text-gray-400 dark:focus:border-blue-600'
 									type='text'
 									placeholder='Jane'
 								/>
 							</div>
 							<div className='flex w-1/2 flex-col'>
-								<label className='text-sm text-gray-500/80'>Last name</label>
+								<label className='text-sm text-gray-500/80 dark:text-gray-400'>
+									Last name
+								</label>
 								<input
-									className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-500'
+									className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-600 dark:border-zinc-950 dark:bg-gray-300/20 dark:text-gray-400 dark:focus:border-blue-600'
 									type='text'
 									placeholder='Doe'
 								/>
 							</div>
 						</div>
 						<div className='mb-3 flex flex-col'>
-							<label className='text-sm text-gray-500/80'>Username</label>
+							<label className='text-sm text-gray-500/80 dark:text-gray-400'>
+								Username
+							</label>
 							<input
-								className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-500'
+								className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-600 dark:border-zinc-950 dark:bg-gray-300/20 dark:text-gray-400 dark:focus:border-blue-600'
 								type='text'
 								placeholder='jane_doe'
 							/>
 						</div>
 						<div className='mb-3 flex flex-col'>
-							<label className='text-sm text-gray-500/80'>Email</label>
+							<label className='text-sm text-gray-500/80 dark:text-gray-400'>
+								Email
+							</label>
 							<input
-								className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-500'
+								className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-600 dark:border-zinc-950 dark:bg-gray-300/20 dark:text-gray-400 dark:focus:border-blue-600'
 								type='email'
 								placeholder='jane_doe@example.com'
 							/>
 						</div>
 						<div className='mb-3 flex flex-col'>
-							<label className='text-sm text-gray-500/80'>Phone</label>
+							<label className='text-sm text-gray-500/80 dark:text-gray-400'>
+								Phone
+							</label>
 							<input
-								className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-500'
+								className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-600 dark:border-zinc-950 dark:bg-gray-300/20 dark:text-gray-400 dark:focus:border-blue-600'
 								type='text'
 								placeholder='+1 555-555-5555'
 							/>
 						</div>
 						<div className='mb-3 flex flex-col'>
-							<label className='text-sm text-gray-500/80'>Password</label>
+							<label className='text-sm text-gray-500/80 dark:text-gray-400'>
+								Password
+							</label>
 							<input
-								className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-500'
+								className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-600 dark:border-zinc-950 dark:bg-gray-300/20 dark:text-gray-400 dark:focus:border-blue-600'
 								type='text'
 								placeholder='********'
 							/>
 						</div>
 						<div className='mb-3 flex flex-col'>
-							<label className='text-sm text-gray-500/80'>Street address</label>
+							<label className='text-sm text-gray-500/80 dark:text-gray-400'>
+								Street address
+							</label>
 							<input
-								className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-500'
+								className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-600 dark:border-zinc-950 dark:bg-gray-300/20 dark:text-gray-400 dark:focus:border-blue-600'
 								type='text'
 								placeholder='123 Main St'
 							/>
 						</div>
 						<div className='mb-3 flex gap-2'>
 							<div className='mb-3 flex w-1/3 flex-col'>
-								<label className='text-sm text-gray-500/80'>City</label>
+								<label className='text-sm text-gray-500/80 dark:text-gray-400'>
+									City
+								</label>
 								<input
-									className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-500'
+									className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-600 dark:border-zinc-950 dark:bg-gray-300/20 dark:text-gray-400 dark:focus:border-blue-600'
 									type='text'
 									placeholder='Miami'
 								/>
 							</div>
 							<div className='mb-3 flex w-1/3 flex-col'>
-								<label className='text-sm text-gray-500/80'>State</label>
+								<label className='text-sm text-gray-500/80 dark:text-gray-400'>
+									State
+								</label>
 								<input
-									className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-500'
+									className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-600 dark:border-zinc-950 dark:bg-gray-300/20 dark:text-gray-400 dark:focus:border-blue-600'
 									type='text'
 									placeholder='FL'
 								/>
 							</div>
 							<div className='flex w-1/3 flex-col'>
-								<label className='text-sm text-gray-500/80'>Zip</label>
+								<label className='text-sm text-gray-500/80 dark:text-gray-400'>
+									Zip
+								</label>
 								<input
-									className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-500'
+									className='mt-1 rounded-lg border p-2.5 outline-none placeholder:text-gray-400 focus:border-2 focus:border-blue-600 dark:border-zinc-950 dark:bg-gray-300/20 dark:text-gray-400 dark:focus:border-blue-600'
 									type='text'
 									placeholder='33333'
 								/>
