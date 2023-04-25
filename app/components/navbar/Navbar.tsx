@@ -22,7 +22,7 @@ const Navbar = () => {
 	});
 
 	return (
-		<div className='fixed bottom-0 left-72 right-0 top-0 z-10 box-border flex h-20 max-w-full items-center justify-between bg-white px-10 shadow-md shadow-gray-300/20 dark:bg-black dark:shadow-none'>
+		<div className='fixed min-w-[600px] bottom-0 left-72 right-0 top-0 z-10 box-border flex h-20 max-w-full items-center justify-between bg-white px-10 shadow-md shadow-gray-300/20 dark:bg-black dark:shadow-none gap-3'>
 			<div className='relative basis-2/5'>
 				<input
 					className='focus:border-1 w-full rounded-xl bg-gray-300/30 py-3 pl-5 text-gray-700 outline-none transition duration-300 ease-in-out placeholder:font-normal placeholder:text-gray-400 hover:bg-gray-300/40 focus:border-2 focus:border-blue-600 dark:text-gray-300  dark:hover:bg-gray-300/30 dark:focus:border-blue-600'
@@ -72,7 +72,7 @@ const Navbar = () => {
 				<div className='mr-1 h-10 w-px border-r dark:border-gray-500'></div>
 				<div className='flex items-center gap-3'>
 					<BsCalendar3 className='h-5 w-5 fill-gray-500/80' />
-					<span className='text-gray-500/80 dark:text-gray-400/80'>{date}</span>
+					<span className='text-gray-500/80 text-sm xl:text-base dark:text-gray-400/80 break-words'>{date}</span>
 				</div>
 			</div>
 		</div>

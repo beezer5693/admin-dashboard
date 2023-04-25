@@ -54,7 +54,7 @@ const UserTransactions = () => {
 		}
 	];
 	return (
-		<div className='mx-h-screen rounded-xl bg-white px-6 pb-4 pt-2 dark:bg-zinc-950'>
+		<div className='rounded-xl bg-white px-6 pb-4 pt-2 dark:bg-zinc-950'>
 			<div className='flex items-center py-3 dark:text-gray-200'>
 				Latest Transactions
 			</div>

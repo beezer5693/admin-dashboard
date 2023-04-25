@@ -15,12 +15,12 @@ const Register = () => {
 	};
 
 	return (
-		<div className='mt-28 flex h-1/2 flex-col items-center px-10'>
+		<div className='mt-28 flex flex-col items-center px-10'>
 			<div className='flex w-2/3 flex-col rounded-2xl bg-white p-8 dark:bg-zinc-950'>
 				<h1 className='text-xl text-black dark:text-gray-200'>
 					Create a New User
 				</h1>
-				<div className='mt-8 flex flex-col justify-center'>
+				<div className='mt-8 flex h-full flex-col justify-center'>
 					<form>
 						<div className='mb-6 flex items-center justify-between gap-3 rounded-lg border-2 border-dashed p-2 dark:border-gray-500'>
 							<div className='flex shrink-0 items-center gap-2'>

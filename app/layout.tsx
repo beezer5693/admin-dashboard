@@ -1,5 +1,3 @@
-'use client';
-
 import './globals.css';
 import { Roboto } from 'next/font/google';
 import Sidebar from './components/sidebar/Sidebar';
@@ -18,12 +16,11 @@ interface ChildProps {
 export default function RootLayout({ children }: ChildProps) {
 	return (
 		<html lang='en' className={roboto.className} suppressHydrationWarning>
-			<body className='flex min-h-screen bg-gray-200/40 pl-72 dark:bg-zinc-900'>
+			<body className='flex min-h-screen overflow-auto bg-gray-200/40 pl-72 dark:bg-zinc-900'>
 				<Providers>
 					<Sidebar />
 					<Navbar />
-					<div className='w-full'>{children}</div>
-					<div className='h-20'></div>
+					<div className='mb-20 w-full'>{children}</div>
 				</Providers>
 			</body>
 		</html>

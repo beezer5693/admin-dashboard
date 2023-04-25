@@ -17,7 +17,7 @@ const Chart = () => {
 	const isDarkMode = theme === 'dark';
 
 	return (
-		<div className='col-span-3 flex flex-col justify-between rounded-2xl bg-white px-6 py-4 dark:bg-zinc-950'>
+		<div className='col-span-1 flex flex-col justify-between rounded-2xl bg-white px-6 py-4 dark:bg-zinc-950 xl:col-span-3'>
 			<span className='text-xl text-gray-800 dark:text-gray-200'>
 				Last 6 Month (Revenue)
 			</span>

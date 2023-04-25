@@ -10,18 +10,18 @@ interface ParamProps {
 const User = ({ params: { userid } }: ParamProps) => {
 	return (
 		<div className='mt-28 px-10'>
-			<div className='flex flex-col gap-10'>
-				<div className='flex gap-4'>
-					<div className='relative flex basis-2/6 flex-col items-center justify-center rounded-2xl bg-white pt-4 dark:bg-zinc-950'>
+			<div className='grid grid-cols-1 gap-7 min-w-[500px]'>
+				<div className='grid grid-cols-1 gap-5 xl:grid-cols-3 min-h-[350px]'>
+					<div className='relative col-span-3 xl:col-span-1 flex flex-col items-center justify-center rounded-2xl bg-white pt-4 dark:bg-zinc-950'>
 						<div className='absolute right-3 top-3 cursor-pointer rounded-lg bg-gray-300/30 px-2 py-1 text-sm text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'>
 							Edit
 						</div>
 						<h1 className='absolute left-4 top-4 text-xl text-gray-800 dark:text-gray-200'>
 							Profile
 						</h1>
-						<div className='flex gap-6'>
+						<div className='flex gap-6 p-5'>
 							<img
-								className='h-28 w-28 rounded-full object-cover'
+								className='h-20 w-20 rounded-full object-cover'
 								src='https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=798&q=80'
 								alt=''
 							/>
@@ -66,11 +66,9 @@ const User = ({ params: { userid } }: ParamProps) => {
 							</div>
 						</div>
 					</div>
-					<div className='grow rounded-2xl bg-white px-4 py-4 dark:bg-zinc-950'>
-						<UserChart />
-					</div>
+					<UserChart />
 				</div>
-				<div>
+				<div >
 					<UserTransactions />
 				</div>
 			</div>

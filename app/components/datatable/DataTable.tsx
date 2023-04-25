@@ -29,8 +29,8 @@ export default function DataTable() {
 					</span>
 				</Link>
 			</div>
-			<div className='w-full overflow-x-auto rounded-xl'>
-				<table className='table w-full'>
+			<div className='max-h-[60vh] w-full  overflow-x-auto rounded-xl'>
+				<table className='table h-full w-full'>
 					<thead>
 						<tr>
 							<th className='bg-blue-600 text-gray-200 dark:bg-zinc-900'>

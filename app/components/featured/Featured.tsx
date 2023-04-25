@@ -8,7 +8,7 @@ import 'react-circular-progressbar/dist/styles.css';
 
 const Featured = () => {
 	return (
-		<div className='col-span-2 rounded-2xl bg-white px-6 py-4 dark:bg-zinc-950'>
+		<div className='col-span-1 rounded-2xl bg-white px-6 py-4 dark:bg-zinc-950 xl:col-span-2'>
 			<div className='flex items-center justify-between'>
 				<h1 className='text-xl text-gray-800 dark:text-gray-200'>
 					Total Revenue
