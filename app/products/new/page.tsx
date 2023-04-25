@@ -1,7 +1,7 @@
 const NewProduct = () => {
 	return (
-		<div className='mt-40 flex flex-col items-center px-20'>
-			<div className='flex w-1/2 flex-col rounded-lg bg-white p-8 dark:bg-zinc-950'>
+		<div className='mt-28 flex flex-col items-center px-20'>
+			<div className='flex w-1/2 flex-col rounded-2xl bg-white p-8 dark:bg-zinc-950'>
 				<h1 className='text-xl text-black dark:text-gray-200'>
 					Add a New Product
 				</h1>

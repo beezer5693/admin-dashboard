@@ -37,7 +37,7 @@ export default function DataTable() {
 								<label>
 									<input
 										type='checkbox'
-										className='checkbox border-gray-200 dark:border-gray-500'
+										className='checkbox-primary checkbox border-gray-200 dark:border-gray-500'
 									/>
 								</label>
 							</th>
@@ -68,7 +68,7 @@ export default function DataTable() {
 									<label>
 										<input
 											type='checkbox'
-											className='checkbox border-gray-600 bg-blue-200/10 dark:border-gray-500'
+											className='checkbox-primary checkbox border-gray-600 bg-blue-200/10 dark:border-gray-500'
 										/>
 									</label>
 								</th>
