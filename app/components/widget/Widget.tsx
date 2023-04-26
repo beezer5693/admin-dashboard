@@ -70,7 +70,7 @@ const Widget = ({ type }: TypeProps) => {
   }
 
   return (
-    <div className='display flex justify-between rounded-xl bg-white p-3 transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-gray-300/40 dark:bg-zinc-950/60'>
+    <div className='display flex justify-between rounded-xl bg-white p-3 transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-gray-300/40 dark:bg-zinc-950/60 dark:hover:shadow-zinc-950/30'>
       <div className='flex flex-col justify-between space-y-3'>
         <span className='font-normal text-gray-500 dark:text-gray-200'>
           {data?.title}

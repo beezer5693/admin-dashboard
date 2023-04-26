@@ -15,7 +15,11 @@ interface ChildProps {
 
 export default function RootLayout({ children }: ChildProps) {
   return (
-    <html lang='en' className={roboto.className} suppressHydrationWarning>
+    <html
+      lang='en'
+      className={`bg-white ${roboto.className}`}
+      suppressHydrationWarning
+    >
       <body className='ml-72 flex min-h-screen min-w-[600px] flex-col items-center bg-gray-300/40 pt-28 dark:bg-zinc-900'>
         <Providers>
           <Sidebar />
