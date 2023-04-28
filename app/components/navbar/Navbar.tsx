@@ -25,6 +25,8 @@ const Navbar = () => {
 
   useEffect(() => setMounted(true), [])
 
+  // Checks to make sure component is mounted to avoid hydration issue
+  // with next-themes
   if (!mounted) return null
 
   return (
@@ -39,23 +41,23 @@ const Navbar = () => {
       </div>
       <div className='flex max-w-fit items-center gap-6'>
         {theme === 'dark' ? (
-          <div className='tooltip tooltip-bottom' data-tip='Light Theme'>
+          <Tooltip title='Switch to light theme'>
             <div
               onClick={() => setTheme('light')}
               className='group cursor-pointer rounded-full  p-3 transition duration-300 ease-in-out dark:hover:bg-gray-400/30'
             >
               <BsSun className='h-6 w-6 fill-gray-500 transition duration-300 ease-in-out dark:group-hover:fill-gray-300' />
             </div>
-          </div>
+          </Tooltip>
         ) : (
-          <div className='tooltip tooltip-bottom' data-tip='Dark Theme'>
+          <Tooltip title='Switch to dark theme'>
             <div
               onClick={() => setTheme('dark')}
               className='group cursor-pointer rounded-full  p-3 transition duration-300 ease-in-out hover:bg-gray-300/30'
             >
               <BsMoon className='h-6 w-6 fill-gray-500 transition duration-300 ease-in-out group-hover:fill-blue-600' />
             </div>
-          </div>
+          </Tooltip>
         )}
         <Tooltip title='Notifications'>
           <div className='group cursor-pointer rounded-full  p-2.5 transition duration-300 ease-in-out hover:bg-gray-300/30 dark:hover:bg-gray-400/30'>
@@ -77,7 +79,7 @@ const Navbar = () => {
         </Tooltip>
         <div className='mr-1 h-10 w-px border-r dark:border-gray-500'></div>
         <div className='flex items-center gap-3'>
-          <BsCalendar3 className='h-5 w-5 fill-gray-500/80' />
+          <BsCalendar3 className='h-5 w-5 shrink-0 fill-gray-500/80' />
           <span className='break-words text-sm text-gray-500/80 dark:text-gray-400/80 xl:text-base'>
             {date}
           </span>
