@@ -5,7 +5,7 @@ type StateType = {
 }
 
 export const initialState: StateType = {
-	user: JSON.parse(localStorage.getItem('user') as string) || null,
+	user: typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('user') as string) : null,
 }
 
 type AuthReducerActionType = {
