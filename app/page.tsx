@@ -9,20 +9,18 @@ import Table from './components/table/Table'
 import { useContext, useEffect } from 'react'
 import { AuthContext } from './context/AuthContext'
 import { useRouter } from 'next/navigation'
+import checkAuthStatus from '@/lib/checkAuthStatus'
 
 export default function Home() {
 	const {
 		state: { user },
-		state: { isLoggedIn },
 	} = useContext(AuthContext)
 
 	const router = useRouter()
 
 	useEffect(() => {
-		if (!isLoggedIn) {
-			router.push('/login')
-		}
-	}, [isLoggedIn])
+		!checkAuthStatus(user) && router.push('/login')
+	}, [user])
 
 	return (
 		<div className='pl-72'>

@@ -3,8 +3,8 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { BsExclamationCircle } from 'react-icons/bs'
 import { useRouter } from 'next/navigation'
-import { signInWithEmailAndPassword } from 'firebase/auth'
-import { collection, query, where, getDocs } from 'firebase/firestore'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { serverTimestamp, setDoc, doc } from 'firebase/firestore'
 import { db } from '../firebase/firebaseConfig'
 import { auth } from '../firebase/firebaseConfig'
 import { useContext } from 'react'
@@ -14,21 +14,26 @@ import { Spinner } from '../components/Spinner/Spinner'
 import Link from 'next/link'
 
 type FormProps = {
+	firstName: string
+	lastName: string
 	emailAddress: string
 	password: string
 }
 
-export default function Login() {
+export default function SignIn() {
 	const [formData, setFormData] = useState<FormProps>({
+		firstName: '',
+		lastName: '',
 		emailAddress: '',
 		password: '',
 	})
 	const [error, setError] = useState<boolean>(false)
-	const [loading, setLoading] = useState<boolean>(false)
+	const [isLoading, setIsLoading] = useState<boolean>(false)
 	const { dispatch } = useContext(AuthContext)
 
-	const { emailAddress, password } = formData
 	const router = useRouter()
+
+	const { firstName, lastName, emailAddress, password } = formData
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		e.preventDefault()
@@ -40,48 +45,37 @@ export default function Login() {
 
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
-		setLoading(true)
+		setIsLoading(true)
 
-		if (!emailAddress || !password) {
+		if (!firstName || !lastName || !emailAddress || !password) {
 			setError(true)
 
 			setTimeout(() => {
 				setError(false)
 			}, 5000)
 
-			setLoading(false)
+			setIsLoading(false)
 			return
 		}
 
 		try {
-			const userCredentials = await signInWithEmailAndPassword(auth, emailAddress, password)
+			const userRef = await createUserWithEmailAndPassword(auth, emailAddress, password)
 
-			const userRef = userCredentials.user
+			const formDataCopy = { ...formData, id: userRef.user.uid, timeStamp: serverTimestamp() }
 
-			const q = query(collection(db, 'db-users'), where('id', '==', userRef.uid))
+			await setDoc(doc(db, 'db-users', userRef.user.uid), formDataCopy)
 
-			const querySnap = await getDocs(q)
-
-			const { id, firstName, lastName, email } = querySnap.docs[0].data()
-
-			const user: DBUser = {
-				id,
+			const userPayload = {
+				id: userRef.user.uid,
 				firstName,
 				lastName,
-				email,
+				email: emailAddress,
 			}
 
-			dispatch({
-				type: 'LOGIN',
-				payload: user || null!,
-			})
-
+			dispatch({ type: 'LOGIN', payload: userPayload })
 			router.push('/')
-
-			setLoading(false)
 		} catch (error) {
 			console.log(error)
-			setLoading(false)
 		}
 	}
 
@@ -94,8 +88,26 @@ export default function Login() {
 
 	return (
 		<div className='min-w-[600px] rounded-xl bg-white p-5 shadow-2xl shadow-gray-300/30'>
-			<h1 className='mb-6 text-center text-2xl text-gray-900'>Sign in to your account.</h1>
+			<h1 className='mb-6 text-center text-2xl text-gray-900'>Sign up for an account.</h1>
 			<form className='mb-5 space-y-5' onSubmit={handleSubmit}>
+				<div className='flex items-center gap-2'>
+					<input
+						className='w-1/2 rounded-lg border bg-white p-2.5 text-gray-800'
+						type='first'
+						id='firstName'
+						placeholder='First name'
+						value={firstName}
+						onChange={handleChange}
+					/>
+					<input
+						className='w-1/2 rounded-lg border bg-white p-2.5 text-gray-800'
+						type='last'
+						id='lastName'
+						placeholder='Last name'
+						value={lastName}
+						onChange={handleChange}
+					/>
+				</div>
 				<div>
 					<input
 						className='w-full rounded-lg border bg-white p-2.5 text-gray-800'
@@ -117,12 +129,12 @@ export default function Login() {
 					/>
 				</div>
 				<button
-					disabled={loading}
+					disabled={isLoading}
 					type='submit'
 					className='flex w-full items-center justify-center gap-4 rounded-lg bg-blue-600 p-2.5 text-gray-100 transition duration-300 ease-in-out hover:bg-blue-600/80 disabled:opacity-70'
 				>
-					{loading && <Spinner />}
-					{loading ? 'Signing in...' : 'Sign in'}
+					{isLoading && <Spinner />}
+					{isLoading ? 'Signing up...' : 'Sign up'}
 				</button>
 				<div className='flex w-full items-center'>
 					<div className='w-1/2 border-t'></div>
@@ -133,9 +145,9 @@ export default function Login() {
 			</form>
 			<OAuth />
 			<div className='mt-10 flex w-full items-center gap-1'>
-				<span>Don't have an account?</span>
-				<Link href='/signup'>
-					<button className='rounded-lg text-blue-600 hover:opacity-80'>Signup here.</button>
+				<span>Already have an account?</span>
+				<Link href='/login'>
+					<button className='rounded-lg text-blue-600 hover:opacity-80'>Sign in here.</button>
 				</Link>
 			</div>
 		</div>

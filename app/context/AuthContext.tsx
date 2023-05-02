@@ -1,36 +1,29 @@
-import { ReactElement, ReactNode, createContext, useReducer } from 'react'
+import { ReactElement, ReactNode, createContext, useEffect, useReducer } from 'react'
 
 type StateType = {
-	user: User | null
-	isLoggedIn: boolean
+	user: DBUser | null
 }
 
 export const initialState: StateType = {
-	user: null,
-	isLoggedIn: false,
+	user: JSON.parse(localStorage.getItem('user') as string) || null,
 }
 
 type AuthReducerActionType = {
 	type: 'LOGIN' | 'LOGOUT'
-	payload: User | null
+	payload?: DBUser
 }
 
-function authReducer(
-	state: StateType,
-	action: AuthReducerActionType
-): StateType {
+function authReducer(state: StateType, action: AuthReducerActionType): StateType {
 	switch (action.type) {
 		case 'LOGIN':
 			return {
 				...state,
-				user: action.payload,
-				isLoggedIn: true,
+				user: action.payload!,
 			}
 		case 'LOGOUT':
 			return {
 				...state,
 				user: null,
-				isLoggedIn: false,
 			}
 		default:
 			return state
@@ -39,6 +32,10 @@ function authReducer(
 
 function useAuthContext(initialState: StateType) {
 	const [state, dispatch] = useReducer(authReducer, initialState)
+
+	useEffect(() => {
+		localStorage.setItem('user', JSON.stringify(state.user))
+	}, [state.user])
 
 	return { state, dispatch }
 }
@@ -56,13 +53,6 @@ type ChildrenType = {
 	children?: ReactElement | ReactElement[] | ReactNode | null
 }
 
-export function AuthProvider({
-	children,
-	...initialState
-}: ChildrenType & StateType) {
-	return (
-		<AuthContext.Provider value={useAuthContext(initialState)}>
-			{children}
-		</AuthContext.Provider>
-	)
+export function AuthProvider({ children, ...initialState }: ChildrenType & StateType) {
+	return <AuthContext.Provider value={useAuthContext(initialState)}>{children}</AuthContext.Provider>
 }

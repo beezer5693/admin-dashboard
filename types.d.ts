@@ -1,15 +1,21 @@
 type User = {
-	id: number
+	id: string
 	firstName: string
 	lastName: string
 	email: string
-	age: number
-	address: {
-		street: string
-		city: string
-		state: string
-		postalCode: string
-	}
-	imgUrl: string
-	status: 'active' | 'pending'
+	userName: string
+	phone: string
+	street: string
+	city: string
+	state: string
+	zip: string
+	profileImg: string
+	status: 'active' | 'pending' | null
+}
+
+type DBUser = {
+	id: string
+	firstName: string
+	lastName: string
+	email: string
 }
